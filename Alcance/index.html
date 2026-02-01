@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alcance de Variables en JS</h1>
+
+    <script>
+        //--Variables Globales--
+        var globalVar = "Soy una variable global con Var";
+        let globalLet = "Soy una variable global con Let";
+
+        function alcanceVariables(){
+            //Utilizacion de variables Globales
+            globalVar = "Accediendo a la variable global con Var";
+            globalLet = "Accediendo a la variable global con Let";
+
+            console.log(`${globalVar} \n${globalLet}`);
+
+            //Variables Locales
+            var localVar = "Soy una variable local con Var";
+            let localLet = "Soy una variable local con Let";
+
+            console.log(localVar + '\n'+ localLet);
+        }
+
+        alcanceVariables();
+
+        //Intento de acceder a variables locales fuera de su alcance
+        console.log(localVar, '<br>', localLet); //Esto generará un error porque las variables locales no son accesibles fuera de la función
+
+
+
+        //--Demostración de alcance de bloque--
+        if(true){
+            var bloqueVar = "Soy una variable de bloque con Var";
+            let bloqueLet = "Soy una variable de bloque con Let";
+            console.log(bloqueVar); //Accesible
+            console.log(bloqueLet); //Accesible
+        }
+        console.log(bloqueVar); //Accesible porque Var no respeta el alcance de bloque
+        console.log(bloqueLet); //Error: bloqueLet no es accesible fuera del bloque
+
+        for(let i = 0; i < 3; i++){
+            console.log("Dentro del ciclo: " + i);
+        }
+        console.log("Fuera del ciclo: " + i); //Error: i no es accesible fuera del ciclo
+
+
+    </script>
+</body>
+</html>

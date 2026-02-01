@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+
+    <button onclick="funcionSaludar()">Click me</button>
+    <p id="saludar"></p>
+
+    <button onclick="arrowSaludar()">Click me</button>
+    <p id="greet"></p>
+
+    <button onclick="reiniciar()">Reiniciar</button>
+
+
+    <script>
+        // Regular Function
+        function funcionSaludar(){
+            return saludar.innerText = "Hola desde una Regular Function";
+        }
+
+        //Arrow Function
+        const arrowSaludar = () => {
+            return greet.innerText = "Hola desde una Arrow Function";
+        }
+
+        //Arrow Function Inline (no necesita return ni llaves)
+        const cuadrado = (numero) => numero * numero;
+        
+        console.log("Cuadrado de 5: " + cuadrado(5)); // Output: 25
+
+        //Reiniciar la página
+        function reiniciar(){
+            saludar.innerText = "";
+            greet.innerText = "";
+        }
+    </script>
+</body>
+</html>
